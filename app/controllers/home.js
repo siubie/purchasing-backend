@@ -17,3 +17,8 @@ router.get('/', function (req, res, next) {
     });
   });
 });
+
+router.get('/now', function (req, res, next) {
+    var now = new Date();
+    res.json({'now': now});
+});

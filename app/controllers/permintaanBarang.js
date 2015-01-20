@@ -27,7 +27,7 @@ router.route('/permintaanbarang')
 
 router.route('/permintaanbarang/:id')
 .get(function(req, res, next){
-	permintaanBarang.findOne({'noSpp':req.params.id},req.body,function(err, result){
+	permintaanBarang.findOne({'nomor':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -35,7 +35,7 @@ router.route('/permintaanbarang/:id')
 	});
 })
 .put(function(req, res, next){
-	permintaanBarang.findOneAndUpdate({'noSpp':req.params.id},req.body,function(err, result){
+	permintaanBarang.findOneAndUpdate({'nomor':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -43,7 +43,7 @@ router.route('/permintaanbarang/:id')
 	});
 })
 .delete(function(req, res, next){
-	permintaanBarang.findOneAndRemove({'noSpp':req.params.id},function(err, result){
+	permintaanBarang.findOneAndRemove({'nomor':req.params.id},function(err, result){
 		if(err)
 		return next(err)
 		else

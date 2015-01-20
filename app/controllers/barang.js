@@ -27,7 +27,7 @@ router.route('/barang')
 
 router.route('/barang/:id')
 .get(function(req, res, next){
-	barang.findOne({'kdBarang':req.params.id},req.body,function(err, result){
+	barang.findOne({'kode':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -35,7 +35,7 @@ router.route('/barang/:id')
 	});
 })
 .put(function(req, res, next){
-	barang.findOneAndUpdate({'kdBarang':req.params.id},req.body,function(err, result){
+	barang.findOneAndUpdate({'kode':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -43,7 +43,7 @@ router.route('/barang/:id')
 	});
 })
 .delete(function(req, res, next){
-	barang.findOneAndRemove({'kdBarang':req.params.id},function(err, result){
+	barang.findOneAndRemove({'kode':req.params.id},function(err, result){
 		if(err)
 		return next(err)
 		else

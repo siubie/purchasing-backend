@@ -27,7 +27,7 @@ router.route('/kategoribarang')
 
 router.route('/kategoribarang/:id')
 .get(function(req, res, next){
-	kategoriBarang.findOne({'kdKategori':req.params.id},req.body,function(err, result){
+	kategoriBarang.findOne({'kode':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -35,7 +35,7 @@ router.route('/kategoribarang/:id')
 	});
 })
 .put(function(req, res, next){
-	kategoriBarang.findOneAndUpdate({'kdKategori':req.params.id},req.body,function(err, result){
+	kategoriBarang.findOneAndUpdate({'kode':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -43,7 +43,7 @@ router.route('/kategoribarang/:id')
 	});
 })
 .delete(function(req, res, next){
-	kategoriBarang.findOneAndRemove({'kdKategori':req.params.id},function(err, result){
+	kategoriBarang.findOneAndRemove({'kode':req.params.id},function(err, result){
 		if(err)
 		return next(err)
 		else

@@ -27,7 +27,7 @@ router.route('/departemen')
 
 router.route('/departemen/:id')
 .get(function(req, res, next){
-	departemen.findOne({'kdDept':req.params.id},req.body,function(err, result){
+	departemen.findOne({'kode':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -35,7 +35,7 @@ router.route('/departemen/:id')
 	});
 })
 .put(function(req, res, next){
-	departemen.findOneAndUpdate({'kdDept':req.params.id},req.body,function(err, result){
+	departemen.findOneAndUpdate({'kode':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -43,7 +43,7 @@ router.route('/departemen/:id')
 	});
 })
 .delete(function(req, res, next){
-	departemen.findOneAndRemove({'kdDept':req.params.id},function(err, result){
+	departemen.findOneAndRemove({'kode':req.params.id},function(err, result){
 		if(err)
 		return next(err)
 		else

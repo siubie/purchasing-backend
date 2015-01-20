@@ -9,7 +9,7 @@ module.exports = function (app) {
 
 router.route('/departemen')
 .get(function(req, res, next){
-	departemen.find({},'-_id kdDept departemen',function(err, result){
+	departemen.find(req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -27,7 +27,7 @@ router.route('/departemen')
 
 router.route('/departemen/:id')
 .get(function(req, res, next){
-	departemen.findOne({'kdDept':req.params.id},'-_id kdDept departemen',function(err, result){
+	departemen.findOne({'kdDept':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else

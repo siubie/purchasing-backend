@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 
 var departemenSchema = new Schema({
-	kdDept: String,
+	kode: String,
 	departemen: String
 });
 

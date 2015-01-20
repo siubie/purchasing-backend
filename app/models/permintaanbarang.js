@@ -7,15 +7,18 @@ var departemenSchema = require('./departemen');
 var barangSchema = require('./barang');
 
 var permintaanBarangSchema = new Schema({
-	noSpp: String,
-	tglPermintaan: Date,
+	nomor: String,
+	tanggal: Date,
 	departemen: departemenSchema,
 	jenis: Boolean,
 	periode: String,
-	lineItemsSppList: [{
+	sppItemsList: [{
 		barang: barangSchema,
-		tglButuh : Date,
-		jumlah: Number
+		tanggalButuh : Date,
+		jumlah: Number,
+		keterangan: String,
+		sisa: Number,
+		status: Boolean
 	}]
 });
 

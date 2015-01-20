@@ -9,7 +9,7 @@ module.exports = function (app) {
 
 router.route('/permintaanbarang')
 .get(function(req, res, next){
-	permintaanBarang.find({},'-_id noSpp tglPermintaan departemen jenis periode lineItemsSppList',function(err, result){
+	permintaanBarang.find(req.body,function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -27,7 +27,7 @@ router.route('/permintaanbarang')
 
 router.route('/permintaanbarang/:id')
 .get(function(req, res, next){
-	permintaanBarang.findOne({'noSpp':req.params.id},'-_id noSpp tglPermintaan departemen jenis periode lineItemsSppList',function(err, result){
+	permintaanBarang.findOne({'noSpp':req.params.id},req.body,function(err, result){
 		if(err)
 		return next(err)
 		else

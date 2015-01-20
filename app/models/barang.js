@@ -7,9 +7,9 @@ var kategoriBarangSchema = require('./kategoribarang');
 var satuanGudangSchema = require('./satuangudang');
 
 var barangSchema = new Schema({
-	kdBarang: String,
-	kategori: kategoriBarangSchema,
-	namaBarang: String,
+	kode: String,
+	kategori: String,
+	nama: String,
 	alias: String,
 	satuan: satuanGudangSchema,
 	deskripsi: String

@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 
 var kategoriBarangSchema = new Schema({
-	kdKategori: String,
+	kode: String,
 	kategori: String
 });
 

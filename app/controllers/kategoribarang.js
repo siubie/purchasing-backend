@@ -9,7 +9,7 @@ module.exports = function (app) {
 
 router.route('/kategoribarang')
 .get(function(req, res, next){
-	kategoriBarang.find(req.body,function(err, result){
+	kategoriBarang.find({},'-_id -__v',function(err, result){
 		if(err)
 		return next(err)
 		else
@@ -27,7 +27,7 @@ router.route('/kategoribarang')
 
 router.route('/kategoribarang/:id')
 .get(function(req, res, next){
-	kategoriBarang.findOne({'kode':req.params.id},req.body,function(err, result){
+	kategoriBarang.findOne({'kode':req.params.id},'-_id -__v',function(err, result){
 		if(err)
 		return next(err)
 		else

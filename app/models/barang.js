@@ -11,7 +11,7 @@ var barangSchema = new Schema({
 	kategori: String,
 	nama: String,
 	alias: String,
-	satuan: satuanGudangSchema,
+	satuan: String,
 	deskripsi: String
 });
 

@@ -1,52 +1,58 @@
 var express = require('express'),
-router = express.Router(),
-mongoose = require('mongoose'),
-barang = mongoose.model('barang');
+    router = express.Router(),
+    mongoose = require('mongoose'),
+    barang = mongoose.model('barang');
 
-module.exports = function (app) {
-	app.use('/purchasing', router);
+module.exports = function(app) {
+    app.use('/purchasing', router);
 };
 
 router.route('/barang')
-.get(function(req, res, next){
-	barang.find({},'-_id -__v',function(err, result){
-		if(err)
-		return next(err)
-		else
-		res.json(result);
-	});
-})
-.post(function(req, res, next){
-	barang.create(req.body,function(err, result){
-		if(err)
-		return next(err)
-		else
-		res.json(result);
-	});
-});
+    .get(function(req, res, next) {
+        barang.find({}, '-_id -__v', function(err, result) {
+            if (err)
+                return next(err);
+            else
+                res.json(result);
+        });
+    })
+    .post(function(req, res, next) {
+        barang.create(req.body, function(err, result) {
+            if (err)
+                return next(err);
+            else
+                res.json(result);
+        });
+    });
 
 router.route('/barang/:id')
-.get(function(req, res, next){
-	barang.findOne({'kode':req.params.id},'-_id -__v',function(err, result){
-		if(err)
-		return next(err)
-		else
-		res.json(result);
-	});
-})
-.put(function(req, res, next){
-	barang.findOneAndUpdate({'kode':req.params.id},req.body,function(err, result){
-		if(err)
-		return next(err)
-		else
-		res.json(result);
-	});
-})
-.delete(function(req, res, next){
-	barang.findOneAndRemove({'kode':req.params.id},function(err, result){
-		if(err)
-		return next(err)
-		else
-		res.json(result);
-	});
-})
+    .get(function(req, res, next) {
+        barang.findOne({
+            'kode': req.params.id
+        }, '-_id -__v', function(err, result) {
+            if (err)
+                return next(err);
+            else
+                res.json(result);
+        });
+    })
+    .put(function(req, res, next) {
+        barang.findOneAndUpdate({
+            'kode': req.params.id
+        }, req.body, function(err, result) {
+            if (err)
+                return next(err);
+            else
+                res.json(result);
+        });
+    })
+    .delete(function(req, res, next) {
+        barang.findOneAndRemove({
+            'kode': req.params.id
+        }, function(err, result) {
+            if (err)
+                return next(err);
+            else
+                res.json(result);
+        });
+    });

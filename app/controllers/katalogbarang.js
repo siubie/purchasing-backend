@@ -28,7 +28,7 @@ router.route('/katalogbarang')
 router.route('/katalogbarang/:id')
     .get(function(req, res, next) {
         katalogBarang.findOne({
-            'nomor': req.params.id
+            'kode': req.params.id
         }, '-_id -__v', function(err, result) {
             if (err)
                 return next(err);
@@ -38,7 +38,7 @@ router.route('/katalogbarang/:id')
     })
     .put(function(req, res, next) {
         katalogBarang.findOneAndUpdate({
-            'nomor': req.params.id
+            'kode': req.params.id
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -48,7 +48,7 @@ router.route('/katalogbarang/:id')
     })
     .delete(function(req, res, next) {
         katalogBarang.findOneAndRemove({
-            'nomor': req.params.id
+            'kode': req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);

@@ -25,10 +25,11 @@ router.route('/katalogbarang')
         });
     });
 
-router.route('/katalogbarang/:id')
+router.route('/katalogbarang/:id1/:id2')
     .get(function(req, res, next) {
         katalogBarang.findOne({
-            'kode': req.params.id
+            'barang.kode': req.params.id1,
+            'supplier.kode': req.params.id2
         }, '-_id -__v', function(err, result) {
             if (err)
                 return next(err);
@@ -38,7 +39,8 @@ router.route('/katalogbarang/:id')
     })
     .put(function(req, res, next) {
         katalogBarang.findOneAndUpdate({
-            'kode': req.params.id
+            'barang.kode': req.params.id1,
+            'supplier.kode': req.params.id2
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -48,7 +50,8 @@ router.route('/katalogbarang/:id')
     })
     .delete(function(req, res, next) {
         katalogBarang.findOneAndRemove({
-            'kode': req.params.id
+            'barang.kode': req.params.id1,
+            'supplier.kode': req.params.id2
         }, function(err, result) {
             if (err)
                 return next(err);

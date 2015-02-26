@@ -11,6 +11,7 @@ var katalogBarangSchema = new Schema({
     barang: barangSchema,
     departemen: departemenSchema,
     supplier: supplierSchema,
+    alias: String,
     leadTime: Number,
     harga: Number
 });

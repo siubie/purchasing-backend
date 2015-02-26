@@ -8,7 +8,6 @@ var barangSchema = require('./barang');
 var supplierSchema = require('./supplier');
 
 var katalogBarangSchema = new Schema({
-    kode: String,
     barang: barangSchema,
     departemen: departemenSchema,
     supplier: supplierSchema,

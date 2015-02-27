@@ -3,9 +3,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var kategoriBarangSchema = require('./kategoribarang');
-var satuanGudangSchema = require('./satuangudang');
-
 var barangSchema = new Schema({
     kode: String,
     kategori: String,
@@ -13,7 +10,14 @@ var barangSchema = new Schema({
     alias: String,
     satuan: String,
     spesifikasi: String,
-    deskripsi: String
+    deskripsi: String,
+    hargaSupplier: [{
+        supplier: String,
+        tanggal: String,
+        alias: String,
+        harga: Number,
+        leadTime: Number
+    }]
 });
 
 barangSchema.virtual('date')

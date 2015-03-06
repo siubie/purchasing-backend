@@ -18,8 +18,8 @@ var permintaanBarangSchema = new Schema({
         tanggalButuh: String,
         jumlah: Number,
         keterangan: String,
-        sisa: Number,
-        status: String
+        status: String,
+        sisa: Number
     }]
 });
 

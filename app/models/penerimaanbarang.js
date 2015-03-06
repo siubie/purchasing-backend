@@ -6,26 +6,22 @@ var mongoose = require('mongoose'),
 var supplierSchema = require('./supplier');
 var barangSchema = require('./barang');
 
-var pesananBarangSchema = new Schema({
+var penerimaanBarangSchema = new Schema({
     nomor: String,
-    tanggal: String,
+    tanggalDibuat: String,
+    tanggalDatang: String,
+    sp: String,
     supplier: supplierSchema,
-    ppn: Boolean,
-    spItemsList: [{
+    lpbItemsList: [{
         spp: String,
         barang: barangSchema,
-        qty: Number,
-        harga: Number,
-        diskon: Number,
-        kurs: Number,
-        valuta: String,
-        valutaBayar: String
+        qty: Number
     }]
 });
 
-pesananBarangSchema.virtual('date')
+penerimaanBarangSchema.virtual('date')
     .get(function() {
         return this._id.getTimestamp();
     });
 
-mongoose.model('pesananBarang', pesananBarangSchema);
+mongoose.model('penerimaanBarang', penerimaanBarangSchema);

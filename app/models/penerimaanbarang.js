@@ -8,10 +8,11 @@ var barangSchema = require('./barang');
 
 var penerimaanBarangSchema = new Schema({
     nomor: String,
-    tanggalDibuat: String,
+    tanggalBuat: String,
     tanggalDatang: String,
     sp: String,
     supplier: supplierSchema,
+    nomorSj: String,
     lpbItemsList: [{
         spp: String,
         barang: barangSchema,

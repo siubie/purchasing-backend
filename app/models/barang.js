@@ -7,17 +7,9 @@ var barangSchema = new Schema({
     kode: String,
     kategori: String,
     nama: String,
-    alias: String,
     satuan: String,
     spesifikasi: String,
-    deskripsi: String,
-    hargaSupplier: [{
-        supplier: String,
-        tanggal: String,
-        alias: String,
-        harga: Number,
-        leadTime: Number
-    }]
+    deskripsi: String
 });
 
 barangSchema.virtual('date')

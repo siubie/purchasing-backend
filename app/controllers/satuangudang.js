@@ -9,7 +9,7 @@ module.exports = function(app) {
 
 router.route('/satuangudang')
     .get(function(req, res, next) {
-        satuanGudang.find({}, '-_id -__v', function(err, result) {
+        satuanGudang.find(function(err, result) {
             if (err)
                 return next(err);
             else
@@ -25,11 +25,11 @@ router.route('/satuangudang')
         });
     });
 
-router.route('/kategoribarang/:id')
+router.route('/satuangudang/:id')
     .get(function(req, res, next) {
         satuanGudang.findOne({
             'satuan': req.params.id
-        }, '-_id -__v', function(err, result) {
+        }, function(err, result) {
             if (err)
                 return next(err);
             else

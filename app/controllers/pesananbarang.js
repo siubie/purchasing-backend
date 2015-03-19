@@ -9,7 +9,7 @@ module.exports = function(app) {
 
 router.route('/pesananbarang')
     .get(function(req, res, next) {
-        pesananBarang.find({}, '-_id -__v', function(err, result) {
+        pesananBarang.find(function(err, result) {
             if (err)
                 return next(err);
             else
@@ -29,7 +29,7 @@ router.route('/pesananbarang/:id')
     .get(function(req, res, next) {
         pesananBarang.findOne({
             'nomor': req.params.id
-        }, '-_id -__v', function(err, result) {
+        }, function(err, result) {
             if (err)
                 return next(err);
             else

@@ -1,15 +1,15 @@
 var express = require('express'),
     router = express.Router(),
     mongoose = require('mongoose'),
-    barang = mongoose.model('barang');
+    returBarang = mongoose.model('returBarang');
 
 module.exports = function(app) {
     app.use('/purchasing', router);
 };
 
-router.route('/barang')
+router.route('/returbarang')
     .get(function(req, res, next) {
-        barang.find(function(err, result) {
+        returBarang.find(function(err, result) {
             if (err)
                 return next(err);
             else
@@ -17,7 +17,7 @@ router.route('/barang')
         });
     })
     .post(function(req, res, next) {
-        barang.create(req.body, function(err, result) {
+        returBarang.create(req.body, function(err, result) {
             if (err)
                 return next(err);
             else
@@ -25,10 +25,10 @@ router.route('/barang')
         });
     });
 
-router.route('/barang/:id')
+router.route('/returbarang/:id')
     .get(function(req, res, next) {
-        barang.findOne({
-            'kode': req.params.id
+        returBarang.findOne({
+            'nomor': req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);
@@ -37,8 +37,8 @@ router.route('/barang/:id')
         });
     })
     .put(function(req, res, next) {
-        barang.findOneAndUpdate({
-            'kode': req.params.id
+        returBarang.findOneAndUpdate({
+            'nomor': req.params.id
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -47,8 +47,8 @@ router.route('/barang/:id')
         });
     })
     .delete(function(req, res, next) {
-        barang.findOneAndRemove({
-            'kode': req.params.id
+        returBarang.findOneAndRemove({
+            'nomor': req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);

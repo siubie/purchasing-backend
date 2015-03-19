@@ -9,7 +9,7 @@ module.exports = function(app) {
 
 router.route('/supplier')
     .get(function(req, res, next) {
-        supplier.find({}, '-_id -__v', function(err, result) {
+        supplier.find(function(err, result) {
             if (err)
                 return next(err);
             else
@@ -29,7 +29,7 @@ router.route('/supplier/:id')
     .get(function(req, res, next) {
         supplier.findOne({
             'kode': req.params.id
-        }, '-_id -__v', function(err, result) {
+        }, function(err, result) {
             if (err)
                 return next(err);
             else

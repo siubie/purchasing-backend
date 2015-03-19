@@ -16,7 +16,8 @@ var penerimaanBarangSchema = new Schema({
     lpbItemsList: [{
         spp: String,
         barang: barangSchema,
-        qty: Number
+        qty: Number,
+        harga: Number
     }]
 });
 

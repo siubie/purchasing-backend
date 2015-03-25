@@ -18,7 +18,7 @@ var allowCrossDomain = function(req, res, next) {
     } else {
         next();
     }
-}
+};
 
 module.exports = function(app, config) {
     app.set('views', config.root + '/app/views');

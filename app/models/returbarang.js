@@ -15,7 +15,6 @@ var returBarangSchema = new Schema({
     supplier: supplierSchema,
     nomorSj: String,
     returItemsList: [{
-        spp: String,
         barang: barangSchema,
         qtyDatang: Number,
         qtyTerima: Number,

@@ -3,14 +3,15 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
+var wasteSchema = require('./waste');
+
 var penjualanWasteSchema = new Schema({
     nomor: String,
     tanggal: String,
     nama: String,
     alamat: String,
     wasteItemsList: [{
-        nama: String,
-        satuan: String,
+        waste: wasteSchema,
         jumlah: Number,
         harga: Number
     }]

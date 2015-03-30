@@ -4,13 +4,14 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var barangSchema = require('./barang');
+var supplierSchema = require('./supplier');
 
 var katalogBarangSchema = new Schema({
     barang: barangSchema,
+    supplier: supplierSchema,
+    alias: String,
     hargaSupplier: [{
-        supplier: String,
         tanggal: String,
-        alias: String,
         harga: Number,
         leadTime: Number
     }]

@@ -10,10 +10,10 @@ var katalogBarangSchema = new Schema({
     barang: barangSchema,
     supplier: supplierSchema,
     alias: String,
+    leadTime: Number,
     hargaSupplier: [{
         tanggal: String,
         harga: Number,
-        leadTime: Number
     }]
 });
 

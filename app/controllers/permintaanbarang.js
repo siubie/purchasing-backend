@@ -17,6 +17,8 @@ router.route('/permintaanbarang')
         });
     })
     .post(function(req, res, next) {
+        var now = new Date();
+        req.body.nomor = "SPP" + now.getTime();
         permintaanBarang.create(req.body, function(err, result) {
             if (err)
                 return next(err);

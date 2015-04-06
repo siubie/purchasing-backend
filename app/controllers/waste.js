@@ -17,6 +17,8 @@ router.route('/waste')
         });
     })
     .post(function(req, res, next) {
+        var now = new Date();
+        req.body.kode = "WST" + now.getTime();
         waste.create(req.body, function(err, result) {
             if (err)
                 return next(err);

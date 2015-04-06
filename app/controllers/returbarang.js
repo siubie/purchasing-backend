@@ -17,6 +17,8 @@ router.route('/returbarang')
         });
     })
     .post(function(req, res, next) {
+        var now = new Date();
+        req.body.nomor = "LPBR" + now.getTime();
         returBarang.create(req.body, function(err, result) {
             if (err)
                 return next(err);

@@ -17,7 +17,10 @@ var penerimaanBarangSchema = new Schema({
         spp: String,
         barang: barangSchema,
         qty: Number,
-        harga: Number
+        harga: Number,
+        kurs: Number,
+        valuta: String,
+        valutaBayar: String
     }]
 });
 

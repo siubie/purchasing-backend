@@ -15,8 +15,6 @@ var permintaanBarangSchema = new Schema({
     status: String,
     sppItemsList: [{
         barang: barangSchema,
-        alias: String,
-        harga: Number,
         tanggalButuh: String,
         jumlah: Number,
         keterangan: String,

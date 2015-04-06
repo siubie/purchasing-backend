@@ -17,6 +17,8 @@ router.route('/barang')
         });
     })
     .post(function(req, res, next) {
+        var now = new Date();
+        req.body.kode = "BRG" + now.getTime();
         barang.create(req.body, function(err, result) {
             if (err)
                 return next(err);

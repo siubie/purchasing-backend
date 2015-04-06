@@ -17,6 +17,8 @@ router.route('/penerimaanbarang')
         });
     })
     .post(function(req, res, next) {
+        var now = new Date();
+        req.body.nomor = "LPB" + now.getTime();
         penerimaanBarang.create(req.body, function(err, result) {
             if (err)
                 return next(err);

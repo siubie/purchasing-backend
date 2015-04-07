@@ -7,20 +7,24 @@ var supplierSchema = require('./supplier');
 var barangSchema = require('./barang');
 
 var returBarangSchema = new Schema({
+    diskon: Number,
+    kurs: Number,
+    lpb: String,
     nomor: String,
+    nomorSj: String,
+    sp: String,
+    status: String,
+    supplier: supplierSchema,
     tanggalBuat: String,
     tanggalDatang: String,
-    lpb: String,
-    sp: String,
-    supplier: supplierSchema,
-    nomorSj: String,
+    valuta: String,
+    valutaBayar: String,
     returItemsList: [{
-        barang: barangSchema,
-        qtyDatang: Number,
-        qtyTerima: Number,
-        qtyRetur: Number,
         alasan: String,
-        harga: Number
+        barang: barangSchema,
+        harga: Number,
+        qtyDatang: Number,
+        qtyRetur: Number
     }]
 });
 

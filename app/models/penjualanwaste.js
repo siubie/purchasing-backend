@@ -6,14 +6,14 @@ var mongoose = require('mongoose'),
 var wasteSchema = require('./waste');
 
 var penjualanWasteSchema = new Schema({
+    alamat: String,
+    nama: String,
     nomor: String,
     tanggal: String,
-    nama: String,
-    alamat: String,
     wasteItemsList: [{
-        waste: wasteSchema,
+        harga: Number,
         jumlah: Number,
-        harga: Number
+        waste: wasteSchema
     }]
 });
 

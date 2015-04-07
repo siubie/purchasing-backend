@@ -4,9 +4,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var supplierSchema = new Schema({
+    alamat: String,
     kode: String,
     nama: String,
-    alamat: String,
     nomorTelepon: String
 });
 

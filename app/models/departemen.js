@@ -4,8 +4,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var departemenSchema = new Schema({
-    kode: String,
-    departemen: String
+    departemen: String,
+    kode: String
 });
 
 departemenSchema.virtual('date')

@@ -4,12 +4,12 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var barangSchema = new Schema({
-    kode: String,
+    deskripsi: String,
     kategori: String,
+    kode: String,
     nama: String,
     satuan: String,
-    spesifikasi: String,
-    deskripsi: String
+    spesifikasi: String
 });
 
 barangSchema.virtual('date')

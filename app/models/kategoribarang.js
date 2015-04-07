@@ -4,8 +4,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var kategoriBarangSchema = new Schema({
-    kode: String,
-    kategori: String
+    kategori: String,
+    kode: String
 });
 
 kategoriBarangSchema.virtual('date')

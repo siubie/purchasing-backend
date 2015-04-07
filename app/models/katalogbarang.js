@@ -7,13 +7,13 @@ var barangSchema = require('./barang');
 var supplierSchema = require('./supplier');
 
 var katalogBarangSchema = new Schema({
-    barang: barangSchema,
-    supplier: supplierSchema,
     alias: String,
+    barang: barangSchema,
     leadTime: Number,
-    hargaSupplier: [{
-        tanggal: String,
+    supplier: supplierSchema,
+    listHarga: [{
         harga: Number,
+        tanggal: String,
     }]
 });
 

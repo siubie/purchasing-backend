@@ -11,7 +11,7 @@ var katalogBarangSchema = new Schema({
     barang: barangSchema,
     leadTime: Number,
     supplier: supplierSchema,
-    listHarga: [{
+    historyHarga: [{
         harga: Number,
         tanggal: String,
     }]

@@ -24,7 +24,8 @@ var returBarangSchema = new Schema({
         barang: barangSchema,
         harga: Number,
         qtyDatang: Number,
-        qtyRetur: Number
+        qtyRetur: Number,
+        status: String
     }]
 });
 

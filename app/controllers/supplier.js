@@ -17,8 +17,7 @@ router.route('/supplier')
         });
     })
     .post(function(req, res, next) {
-        var now = new Date();
-        req.body.kode = "SUP" + now.getTime();
+        req.body.kode = "SUP" + new Date().getTime();
         supplier.create(req.body, function(err, result) {
             if (err)
                 return next(err);

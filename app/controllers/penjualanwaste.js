@@ -17,8 +17,7 @@ router.route('/penjualanwaste')
         });
     })
     .post(function(req, res, next) {
-        var now = new Date();
-        req.body.nomor = "PW" + now.getTime();
+        req.body.nomor = "PW" + new Date().getTime();
         penjualanWaste.create(req.body, function(err, result) {
             if (err)
                 return next(err);

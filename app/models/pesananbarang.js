@@ -20,7 +20,7 @@ var pesananBarangSchema = new Schema({
     spItemsList: [{
         barang: barangSchema,
         harga: Number,
-        hargaBaru: Boolean,
+        hargaKatalog: Number,
         qty: Number,
         spp: String,
         status: String

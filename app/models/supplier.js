@@ -7,7 +7,8 @@ var supplierSchema = new Schema({
     alamat: String,
     kode: String,
     nama: String,
-    nomorTelepon: String
+    nomorTelepon: String,
+    kategori: [String]
 });
 
 supplierSchema.virtual('date')

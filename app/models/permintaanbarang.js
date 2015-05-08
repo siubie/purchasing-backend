@@ -9,6 +9,7 @@ var barangSchema = require('./barang');
 var permintaanBarangSchema = new Schema({
     departemen: departemenSchema,
     jenis: Boolean,
+    kategori: String,
     nomor: String,
     periode: String,
     status: String,

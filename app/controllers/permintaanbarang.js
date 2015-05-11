@@ -18,9 +18,6 @@ router.route('/permintaanbarang')
     })
     .post(function(req, res, next) {
         req.body.nomor = "SPP" + new Date().getTime();
-        for (i = 0; i < req.body.sppItemsList; i++) {
-            req.body.sppItemsList[i].sisa = req.body.sppItemsList[i].jumlah;
-        }
         permintaanBarang.create(req.body, function(err, result) {
             if (err)
                 return next(err);

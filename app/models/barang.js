@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 var barangSchema = new Schema({
     deskripsi: String,
     kategori: String,
+    jenis: String,
     kode: String,
     nama: String,
     satuan: String,

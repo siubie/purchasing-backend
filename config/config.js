@@ -9,7 +9,7 @@ var config = {
             name: 'api'
         },
         port: 3000,
-        db: 'mongodb://localhost/api-development'
+        db: 'mongodb://admin:admin@ds031972.mongolab.com:31972/api-development'
     },
     test: {
         root: rootPath,

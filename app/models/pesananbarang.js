@@ -22,7 +22,8 @@ var pesananBarangSchema = new Schema({
         barang: barangSchema,
         harga: Number,
         hargaKatalog: Number,
-        qty: Number,
+        jumlah: Number,
+        satuan: String,
         spp: String,
         status: String
     }]

@@ -20,6 +20,7 @@ var permintaanBarangSchema = new Schema({
         jumlah: Number,
         keterangan: String,
         leadTime: Number,
+        satuan: String,
         sisa: Number,
         status: String,
         tanggalButuh: String

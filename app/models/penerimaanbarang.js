@@ -8,6 +8,7 @@ var barangSchema = require('./barang');
 
 var penerimaanBarangSchema = new Schema({
     diskon: Number,
+    kategori: String,
     kurs: Number,
     nomor: String,
     nomorSj: String,

@@ -8,7 +8,7 @@ var barangSchema = require('./barang');
 
 var permintaanBarangSchema = new Schema({
     departemen: departemenSchema,
-    jenis: Boolean,
+    emergency: Boolean,
     kategori: String,
     nomor: String,
     periode: String,
@@ -16,7 +16,7 @@ var permintaanBarangSchema = new Schema({
     tanggal: String,
     sppItemsList: [{
         barang: barangSchema,
-        harga: Number,
+        hargaKatalog: Number,
         jumlah: Number,
         keterangan: String,
         leadTime: Number,

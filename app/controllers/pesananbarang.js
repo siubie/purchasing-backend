@@ -1,13 +1,13 @@
-var express = require('express'),
+var express = require("express"),
     router = express.Router(),
-    mongoose = require('mongoose'),
-    pesananBarang = mongoose.model('pesananBarang');
+    mongoose = require("mongoose"),
+    pesananBarang = mongoose.model("pesananBarang");
 
 module.exports = function(app) {
-    app.use('/purchasing', router);
+    app.use("/purchasing", router);
 };
 
-router.route('/pesananbarang')
+router.route("/pesananbarang")
     .get(function(req, res, next) {
         pesananBarang.find(function(err, result) {
             if (err)
@@ -26,10 +26,10 @@ router.route('/pesananbarang')
         });
     });
 
-router.route('/pesananbarang/:id')
+router.route("/pesananbarang/:id")
     .get(function(req, res, next) {
         pesananBarang.findOne({
-            'nomor': req.params.id
+            "nomor": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);
@@ -39,7 +39,7 @@ router.route('/pesananbarang/:id')
     })
     .put(function(req, res, next) {
         pesananBarang.findOneAndUpdate({
-            'nomor': req.params.id
+            "nomor": req.params.id
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -49,7 +49,7 @@ router.route('/pesananbarang/:id')
     })
     .delete(function(req, res, next) {
         pesananBarang.findOneAndRemove({
-            'nomor': req.params.id
+            "nomor": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);

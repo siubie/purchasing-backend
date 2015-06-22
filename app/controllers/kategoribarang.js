@@ -1,13 +1,13 @@
-var express = require('express'),
+var express = require("express"),
     router = express.Router(),
-    mongoose = require('mongoose'),
-    kategoriBarang = mongoose.model('kategoriBarang');
+    mongoose = require("mongoose"),
+    kategoriBarang = mongoose.model("kategoriBarang");
 
 module.exports = function(app) {
-    app.use('/purchasing', router);
+    app.use("/purchasing", router);
 };
 
-router.route('/kategoribarang')
+router.route("/kategoribarang")
     .get(function(req, res, next) {
         kategoriBarang.find(function(err, result) {
             if (err)
@@ -25,10 +25,10 @@ router.route('/kategoribarang')
         });
     });
 
-router.route('/kategoribarang/:id')
+router.route("/kategoribarang/:id")
     .get(function(req, res, next) {
         kategoriBarang.findOne({
-            'kode': req.params.id
+            "kode": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);
@@ -38,7 +38,7 @@ router.route('/kategoribarang/:id')
     })
     .put(function(req, res, next) {
         kategoriBarang.findOneAndUpdate({
-            'kode': req.params.id
+            "kode": req.params.id
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -48,7 +48,7 @@ router.route('/kategoribarang/:id')
     })
     .delete(function(req, res, next) {
         kategoriBarang.findOneAndRemove({
-            'kode': req.params.id
+            "kode": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);

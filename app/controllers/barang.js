@@ -1,13 +1,13 @@
-var express = require('express'),
+var express = require("express"),
     router = express.Router(),
-    mongoose = require('mongoose'),
-    barang = mongoose.model('barang');
+    mongoose = require("mongoose"),
+    barang = mongoose.model("barang");
 
 module.exports = function(app) {
-    app.use('/purchasing', router);
+    app.use("/purchasing", router);
 };
 
-router.route('/barang')
+router.route("/barang")
     .get(function(req, res, next) {
         barang.find(function(err, result) {
             if (err)
@@ -26,10 +26,10 @@ router.route('/barang')
         });
     });
 
-router.route('/barang/:id')
+router.route("/barang/:id")
     .get(function(req, res, next) {
         barang.findOne({
-            'kode': req.params.id
+            "kode": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);
@@ -39,7 +39,7 @@ router.route('/barang/:id')
     })
     .put(function(req, res, next) {
         barang.findOneAndUpdate({
-            'kode': req.params.id
+            "kode": req.params.id
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -49,7 +49,7 @@ router.route('/barang/:id')
     })
     .delete(function(req, res, next) {
         barang.findOneAndRemove({
-            'kode': req.params.id
+            "kode": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);

@@ -1,13 +1,13 @@
-var express = require('express'),
+var express = require("express"),
     router = express.Router(),
-    mongoose = require('mongoose'),
-    satuanGudang = mongoose.model('satuanGudang');
+    mongoose = require("mongoose"),
+    satuanGudang = mongoose.model("satuanGudang");
 
 module.exports = function(app) {
-    app.use('/purchasing', router);
+    app.use("/purchasing", router);
 };
 
-router.route('/satuangudang')
+router.route("/satuangudang")
     .get(function(req, res, next) {
         satuanGudang.find(function(err, result) {
             if (err)
@@ -25,10 +25,10 @@ router.route('/satuangudang')
         });
     });
 
-router.route('/satuangudang/:id')
+router.route("/satuangudang/:id")
     .get(function(req, res, next) {
         satuanGudang.findOne({
-            'satuan': req.params.id
+            "satuan": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);
@@ -38,7 +38,7 @@ router.route('/satuangudang/:id')
     })
     .put(function(req, res, next) {
         satuanGudang.findOneAndUpdate({
-            'satuan': req.params.id
+            "satuan": req.params.id
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -48,7 +48,7 @@ router.route('/satuangudang/:id')
     })
     .delete(function(req, res, next) {
         satuanGudang.findOneAndRemove({
-            'satuan': req.params.id
+            "satuan": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);

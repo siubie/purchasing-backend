@@ -1,5 +1,3 @@
-// Example model
-
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
@@ -7,11 +5,9 @@ var departemenSchema = require('./departemen');
 var barangSchema = require('./barang');
 
 var permintaanBarangSchema = new Schema({
-    departemen: departemenSchema,
     emergency: Boolean,
     kategori: String,
     nomor: String,
-    periode: String,
     status: String,
     tanggal: String,
     sppItemsList: [{
@@ -20,7 +16,6 @@ var permintaanBarangSchema = new Schema({
         jumlah: Number,
         keterangan: String,
         leadTime: Number,
-        satuan: String,
         sisa: Number,
         status: String,
         tanggalButuh: String

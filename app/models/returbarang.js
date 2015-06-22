@@ -1,5 +1,3 @@
-// Example model
-
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
@@ -18,7 +16,6 @@ var returBarangSchema = new Schema({
     tanggalBuat: String,
     tanggalDatang: String,
     valuta: String,
-    valutaBayar: String,
     returItemsList: [{
         alasan: String,
         barang: barangSchema,

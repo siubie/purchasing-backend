@@ -1,13 +1,13 @@
-var express = require('express'),
+var express = require("express"),
     router = express.Router(),
-    mongoose = require('mongoose'),
-    waste = mongoose.model('waste');
+    mongoose = require("mongoose"),
+    waste = mongoose.model("waste");
 
 module.exports = function(app) {
-    app.use('/purchasing', router);
+    app.use("/purchasing", router);
 };
 
-router.route('/waste')
+router.route("/waste")
     .get(function(req, res, next) {
         waste.find(function(err, result) {
             if (err)
@@ -26,10 +26,10 @@ router.route('/waste')
         });
     });
 
-router.route('/waste/:id')
+router.route("/waste/:id")
     .get(function(req, res, next) {
         waste.findOne({
-            'kode': req.params.id
+            "kode": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);
@@ -39,7 +39,7 @@ router.route('/waste/:id')
     })
     .put(function(req, res, next) {
         waste.findOneAndUpdate({
-            'kode': req.params.id
+            "kode": req.params.id
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -49,7 +49,7 @@ router.route('/waste/:id')
     })
     .delete(function(req, res, next) {
         waste.findOneAndRemove({
-            'kode': req.params.id
+            "kode": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);

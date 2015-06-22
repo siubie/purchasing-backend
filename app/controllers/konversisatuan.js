@@ -1,15 +1,15 @@
 var express = require("express"),
     router = express.Router(),
     mongoose = require("mongoose"),
-    katalogBarang = mongoose.model("katalogBarang");
+    konversiSatuan = mongoose.model("konversiSatuan");
 
 module.exports = function(app) {
     app.use("/purchasing", router);
 };
 
-router.route("/katalogbarang")
+router.route("/konversisatuan")
     .get(function(req, res, next) {
-        katalogBarang.find(function(err, result) {
+        konversiSatuan.find(function(err, result) {
             if (err)
                 return next(err);
             else
@@ -17,7 +17,7 @@ router.route("/katalogbarang")
         });
     })
     .post(function(req, res, next) {
-        katalogBarang.create(req.body, function(err, result) {
+        konversiSatuan.create(req.body, function(err, result) {
             if (err)
                 return next(err);
             else
@@ -25,11 +25,11 @@ router.route("/katalogbarang")
         });
     });
 
-router.route("/katalogbarang/:id1/:id2")
+router.route("/konversiSatuan/:id1/:id2")
     .get(function(req, res, next) {
-        katalogBarang.findOne({
-            "barang.kode": req.params.id1,
-            "supplier.kode": req.params.id2
+        konversiSatuan.findOne({
+            "satuanGudang": req.params.id1,
+            "satuanKonversi": req.params.id2
         }, function(err, result) {
             if (err)
                 return next(err);
@@ -38,9 +38,9 @@ router.route("/katalogbarang/:id1/:id2")
         });
     })
     .put(function(req, res, next) {
-        katalogBarang.findOneAndUpdate({
-            "barang.kode": req.params.id1,
-            "supplier.kode": req.params.id2
+        konversiSatuan.findOneAndUpdate({
+            "satuanGudang": req.params.id1,
+            "satuanKonversi": req.params.id2
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -49,9 +49,9 @@ router.route("/katalogbarang/:id1/:id2")
         });
     })
     .delete(function(req, res, next) {
-        katalogBarang.findOneAndRemove({
-            "barang.kode": req.params.id1,
-            "supplier.kode": req.params.id2
+        konversiSatuan.findOneAndRemove({
+            "satuanGudang": req.params.id1,
+            "satuanKonversi": req.params.id2
         }, function(err, result) {
             if (err)
                 return next(err);

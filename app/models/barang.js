@@ -1,6 +1,4 @@
-// Example model
-
-var mongoose = require('mongoose'),
+var mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
 var barangSchema = new Schema({
@@ -10,12 +8,12 @@ var barangSchema = new Schema({
     kode: String,
     nama: String,
     satuan: String,
-    spesifikasi: String,
+    spesifikasi: String
 });
 
-barangSchema.virtual('date')
+barangSchema.virtual("date")
     .get(function() {
         return this._id.getTimestamp();
     });
 
-mongoose.model('barang', barangSchema);
+mongoose.model("barang", barangSchema);

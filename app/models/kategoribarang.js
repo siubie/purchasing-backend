@@ -1,6 +1,4 @@
-// Example model
-
-var mongoose = require('mongoose'),
+var mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
 var kategoriBarangSchema = new Schema({
@@ -8,9 +6,9 @@ var kategoriBarangSchema = new Schema({
     kode: String
 });
 
-kategoriBarangSchema.virtual('date')
+kategoriBarangSchema.virtual("date")
     .get(function() {
         return this._id.getTimestamp();
     });
 
-mongoose.model('kategoriBarang', kategoriBarangSchema);
+mongoose.model("kategoriBarang", kategoriBarangSchema);

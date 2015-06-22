@@ -1,13 +1,13 @@
-var express = require('express'),
+var express = require("express"),
     router = express.Router(),
-    mongoose = require('mongoose'),
-    departemen = mongoose.model('departemen');
+    mongoose = require("mongoose"),
+    departemen = mongoose.model("departemen");
 
 module.exports = function(app) {
-    app.use('/purchasing', router);
+    app.use("/purchasing", router);
 };
 
-router.route('/departemen')
+router.route("/departemen")
     .get(function(req, res, next) {
         departemen.find(function(err, result) {
             if (err)
@@ -25,10 +25,10 @@ router.route('/departemen')
         });
     });
 
-router.route('/departemen/:id')
+router.route("/departemen/:id")
     .get(function(req, res, next) {
         departemen.findOne({
-            'kode': req.params.id
+            "kode": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);
@@ -38,7 +38,7 @@ router.route('/departemen/:id')
     })
     .put(function(req, res, next) {
         departemen.findOneAndUpdate({
-            'kode': req.params.id
+            "kode": req.params.id
         }, req.body, function(err, result) {
             if (err)
                 return next(err);
@@ -48,7 +48,7 @@ router.route('/departemen/:id')
     })
     .delete(function(req, res, next) {
         departemen.findOneAndRemove({
-            'kode': req.params.id
+            "kode": req.params.id
         }, function(err, result) {
             if (err)
                 return next(err);

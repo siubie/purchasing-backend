@@ -1,5 +1,3 @@
-// Example model
-
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
@@ -17,12 +15,13 @@ var pesananBarangSchema = new Schema({
     syaratBayar: Number,
     tanggal: String,
     valuta: String,
-    valutaBayar: String,
     spItemsList: [{
         barang: barangSchema,
         harga: Number,
         hargaKatalog: Number,
-        jumlah: Number,
+        jumlahPesan: Number,
+        jumlahDiminta: Number,
+        konversi: Number,
         satuan: String,
         spp: String,
         status: String

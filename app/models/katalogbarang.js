@@ -1,10 +1,8 @@
-// Example model
-
-var mongoose = require('mongoose'),
+var mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
-var barangSchema = require('./barang');
-var supplierSchema = require('./supplier');
+var barangSchema = require("./barang");
+var supplierSchema = require("./supplier");
 
 var katalogBarangSchema = new Schema({
     alias: String,
@@ -17,9 +15,9 @@ var katalogBarangSchema = new Schema({
     }]
 });
 
-katalogBarangSchema.virtual('date')
+katalogBarangSchema.virtual("date")
     .get(function() {
         return this._id.getTimestamp();
     });
 
-mongoose.model('katalogBarang', katalogBarangSchema);
+mongoose.model("katalogBarang", katalogBarangSchema);
